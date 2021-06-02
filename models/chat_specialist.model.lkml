@@ -14,7 +14,7 @@ explore: topbar {
   join: primarylink {
     relationship: one_to_one
     type: left_outer
-    sql_on: ${topbar.chatspecialistempcode} = ${primarylink.employee_code};;
+    sql_on: ${topbar.employeeid} = ${primarylink.employeeid};;
   }
 }
 
