@@ -2,19 +2,14 @@ view: wrapping_up {
   sql_table_name: "CHAT"."WRAPPING_UP"
     ;;
 
-  dimension_group: date {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}."DATE" ;;
+  dimension: avail {
+    type: number
+    sql: ${TABLE}."AVAIL" ;;
+  }
+
+  dimension: availability_ratio {
+    type: number
+    sql: ${TABLE}."AVAILABILITY_RATIO" ;;
   }
 
   dimension: employeeid {
@@ -28,9 +23,19 @@ view: wrapping_up {
     sql: ${TABLE}."NAME" ;;
   }
 
-  dimension: seconds {
-    type: number
-    sql: ${TABLE}."SECONDS" ;;
+  dimension_group: nominaldate {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}."NOMINALDATE" ;;
   }
 
   dimension: total {
