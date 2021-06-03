@@ -18,6 +18,14 @@ explore: topbar {
   }
 }
 
+explore: avail {
+  join: primarylink {
+    relationship: one_to_one
+    type: left_outer
+    sql_on: ${avail.employeeid} = ${primarylink.employeeid};;
+  }
+}
+
 datagroup: chat_specialist_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
