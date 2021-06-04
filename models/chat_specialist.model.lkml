@@ -42,6 +42,15 @@ explore: wrapping_up {
   }
 }
 
+explore: recognitions {
+  join: primarylink {
+    relationship: one_to_one
+    type: left_outer
+    sql_on: ${recognitions.creator_emp_id} = ${primarylink.employeeid}
+    and ${recognitions.recipient_emp_id} = ${primarylink.employeeid};;
+  }
+}
+
 
 datagroup: chat_specialist_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
