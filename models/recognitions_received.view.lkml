@@ -1,6 +1,13 @@
-view: recognitions {
-  sql_table_name: "CHAT"."RECOGNITIONS"
+view: recognitions_received {
+  sql_table_name: "CHAT"."RECOGNITIONS_RECEIVED"
     ;;
+  drill_fields: [id]
+
+  dimension: id {
+    primary_key: yes
+    type: number
+    sql: ${TABLE}."ID" ;;
+  }
 
   dimension: badge {
     type: string
@@ -28,16 +35,6 @@ view: recognitions {
     sql: ${TABLE}."CREATED" ;;
   }
 
-  dimension: creator_emp_id {
-    type: number
-    sql: ${TABLE}."CREATOR_EMP_ID" ;;
-  }
-
-  dimension: creator_username {
-    type: string
-    sql: ${TABLE}."CREATOR_USERNAME" ;;
-  }
-
   dimension: message {
     type: string
     sql: ${TABLE}."MESSAGE" ;;
@@ -58,11 +55,6 @@ view: recognitions {
     sql: ${TABLE}."RECIPIENT_EMP_ID" ;;
   }
 
-  dimension: id {
-    type: number
-    sql: ${TABLE}."ID" ;;
-  }
-
   dimension: recipient_username {
     type: string
     sql: ${TABLE}."RECIPIENT_USERNAME" ;;
@@ -81,6 +73,6 @@ view: recognitions {
 
   measure: count {
     type: count
-    drill_fields: [creator_username, recipient_username]
+    drill_fields: [id, recipient_username]
   }
 }

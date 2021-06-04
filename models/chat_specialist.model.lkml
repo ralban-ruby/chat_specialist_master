@@ -42,15 +42,21 @@ explore: wrapping_up {
   }
 }
 
-explore: recognitions {
+explore: recognitions_given {
   join: primarylink {
     relationship: one_to_one
     type: left_outer
-    sql_on: ${recognitions.creator_emp_id} = ${primarylink.employeeid}
-    and ${recognitions.recipient_emp_id} = ${primarylink.employeeid};;
+    sql_on: ${recognitions_given.creator_emp_id} = ${primarylink.employeeid};;
   }
 }
 
+explore: recognitions_received {
+  join: primarylink {
+    relationship: one_to_one
+    type: left_outer
+    sql_on: ${recognitions_received.recipient_emp_id} = ${primarylink.employeeid};;
+  }
+}
 
 datagroup: chat_specialist_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
