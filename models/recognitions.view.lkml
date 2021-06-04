@@ -58,6 +58,11 @@ view: recognitions {
     sql: ${TABLE}."RECIPIENT_EMP_ID" ;;
   }
 
+  dimension: id {
+    type: number
+    sql: ${TABLE}."ID" ;;
+  }
+
   dimension: recipient_username {
     type: string
     sql: ${TABLE}."RECIPIENT_USERNAME" ;;
