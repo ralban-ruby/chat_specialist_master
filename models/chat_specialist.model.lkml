@@ -58,6 +58,8 @@ explore: recognitions_received {
   }
 }
 
+explore: status_by_day {}
+
 datagroup: chat_specialist_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
