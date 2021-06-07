@@ -18,6 +18,11 @@ view: status_by_day {
     sql: ${TABLE}."NAME" ;;
   }
 
+  dimension: title {
+    type: string
+    sql: ${TABLE}."TITLE" ;;
+  }
+
   dimension_group: nominaldate {
     type: time
     timeframes: [
