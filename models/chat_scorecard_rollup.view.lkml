@@ -40,7 +40,7 @@ view: chat_scorecard_rollup {
   }
 
   dimension: q_id {
-    type: string
+    type: number
     sql: ${TABLE}."Q_ID" ;;
   }
 
