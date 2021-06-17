@@ -2,11 +2,11 @@ connection: "elt_connector"
 
 include: "*.view"
 
-explore: scores {
+explore: chat_scorecard_rollup {
   join: primarylink {
     relationship: one_to_one
     type: left_outer
-    sql_on: ${scores.specialistempcode} = ${primarylink.employee_code};;
+    sql_on: ${chat_scorecard_rollup.chatspecialistempcode} = ${primarylink.employee_code};;
   }
 }
 
