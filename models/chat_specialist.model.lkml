@@ -52,9 +52,9 @@ explore: recognitions_given {
 
 explore: recognitions_received {
   join: primarylink {
-    relationship: one_to_one
+    relationship: many_to_one
     type: left_outer
-    sql_on: ${recognitions_received.recipient_emp_id} = ${primarylink.employeeid};;
+    sql_on: ${recognitions_received.recipient_emp_id} = ${primarylink.employee_code};;
   }
 }
 
