@@ -1,7 +1,7 @@
 connection: "elt_connector"
 
 include: "*.view"
-include: "/**/*.dashboard"
+#include: "/**/*.dashboard"
 
 explore: chat_scorecard_rollup {
   join: primarylink {
