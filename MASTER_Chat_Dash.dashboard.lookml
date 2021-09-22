@@ -1,5 +1,5 @@
-- dashboard: chat_dashboard_v0
-  title: Chat Dashboard v0
+- dashboard: master_chat_dashboard_v0
+  title: Master Chat Dashboard v0
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:
