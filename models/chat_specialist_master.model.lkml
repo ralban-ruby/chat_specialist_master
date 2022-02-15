@@ -35,6 +35,14 @@ explore: brb {
   }
 }
 
+explore: brb1 {
+  join: primarylink {
+    relationship: one_to_one
+    type: left_outer
+    sql_on: ${brb1.employeeid} = ${primarylink.employeeid};;
+  }
+}
+
 explore: wrapping_up {
   join: primarylink {
     relationship: one_to_one
