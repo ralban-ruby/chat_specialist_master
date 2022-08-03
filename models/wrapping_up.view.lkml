@@ -18,12 +18,18 @@ view: wrapping_up {
     sql: ${TABLE}."EMPLOYEEID" ;;
   }
 
+  dimension: employee_code {
+    type: number
+    value_format_name: id
+    sql: ${TABLE}."EMPLOYEE_CODE" ;;
+  }
+
   dimension: name {
     type: string
     sql: ${TABLE}."NAME" ;;
   }
 
-  dimension_group: nominaldate {
+  dimension_group: date {
     type: time
     timeframes: [
       raw,
@@ -35,7 +41,7 @@ view: wrapping_up {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}."NOMINALDATE" ;;
+    sql: ${TABLE}."DATE" ;;
   }
 
   dimension: total {
